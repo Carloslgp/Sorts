@@ -1,7 +1,7 @@
 package MyArrayList;
 
 import InsertionSort.*;
-import QuickSort.QuickSort;
+
 
 public class MyArrayList<T>{
     Object[] data;
@@ -116,16 +116,21 @@ public class MyArrayList<T>{
     public void insertionSort(){
         SortingAlgorithm sortingAlgorithm = new SortingAlgorithm();
 
-        // ADICIONE O (MyArrayList<Integer>) AQUI
-        // Isso "força" o 'this' a ser tratado como um MyArrayList<Integer>
         sortingAlgorithm.insertionSort((MyArrayList<Integer>) this);
     }
 
     public void quickSort(){
         SortingAlgorithm sortingAlgorithm = new SortingAlgorithm();
 
-        // ADICIONE O (MyArrayList<Integer>) AQUI
-        // Isso "força" o 'this' a ser tratado como um MyArrayList<Integer>
+
         sortingAlgorithm.quickSort((MyArrayList<Integer>) this);
     }
+
+
+    public void bubbleSort(){
+        SortingAlgorithm sortingAlgorithm = new SortingAlgorithm();
+
+        sortingAlgorithm.bubbleSort((MyArrayList<Integer>) this);
+    }
+
 }

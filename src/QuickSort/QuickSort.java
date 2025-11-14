@@ -6,27 +6,22 @@ public class QuickSort {
 
     public QuickSort(){}
 
-    // Método público — apenas chama o quickSort completo
     public void quickSort(MyArrayList<Integer> list){
         quickSort(list, 0, list.length() - 1);
     }
 
-    // QuickSort recursivo
     private void quickSort(MyArrayList<Integer> list, int left, int right){
         if (left < right) {
             int pivotIndex = partition(list, left, right);
 
-            // Ordena a parte da esquerda
             quickSort(list, left, pivotIndex - 1);
 
-            // Ordena a parte da direita
             quickSort(list, pivotIndex + 1, right);
         }
     }
 
-    // Particiona o array e retorna a posição do pivô
     private int partition(MyArrayList<Integer> list, int left, int right){
-        int pivot = list.get(right); // pivô = último elemento
+        int pivot = list.get(right);
         int i = left - 1;
 
         for (int j = left; j < right; j++){
@@ -36,12 +31,10 @@ public class QuickSort {
             }
         }
 
-        // Coloca o pivô na posição correta
         swap(list, i + 1, right);
         return i + 1;
     }
 
-    // Troca dois elementos
     private void swap(MyArrayList<Integer> list, int indice1, int indice2){
         Integer temp = list.get(indice1);
         list.set(indice1, list.get(indice2));

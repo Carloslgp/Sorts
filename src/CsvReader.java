@@ -19,7 +19,6 @@ public class CsvReader {
                 for (String v : valores) {
                     v = v.trim();
 
-                    // Ignora valores não numéricos
                     if (!v.matches("-?\\d+")) {
                         continue;
                     }
